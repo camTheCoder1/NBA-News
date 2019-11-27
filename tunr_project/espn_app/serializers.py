@@ -6,13 +6,13 @@ from .models import Team, Game, News
 class GameSerializer(serializers.ModelSerializer):
     class Meta:
         model = Game
-        fields = ('opponent', 'date', 'location', 'team')
+        fields = ('id', 'opponent', 'date', 'location')
 
 
 class NewsSerializer(serializers.ModelSerializer):
     class Meta:
         model = News
-        fields = ('title', 'article_url')
+        fields = ('id, ''title', 'article_url')
 
 
 class TeamSerializer(serializers.ModelSerializer):
@@ -21,4 +21,4 @@ class TeamSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Team
-        fields = ('name', 'logo_url', 'coach', 'game', 'news')
+        fields = ('id', 'name', 'logo_url', 'coach', 'games', 'news')

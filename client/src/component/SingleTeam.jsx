@@ -1,33 +1,47 @@
-import React, { Component } from 'react'
-import axios from 'axios'
-export default class SingleTeam extends Component {
+import React, { Component } from 'react';
+import axios from 'axios';
+
+class SingleTeam extends Component {
+
     state = {
-        name: '',
-        logo_url: '',
-        coach: '',
+        team: {},
         games: [],
         news: []
     }
 
     componentDidMount() {
-        //get data for single team when component mounts
-        const teamId = this.props.match.params.teamId
-        axios.get(`/api/v1/team/${teamId}`)
-            .then((res) => {
-                console.log(res.data)
-                this.setState(res.data)
+        const teamId = this.props.match.params.id;
+        this.fetchArtist(teamId)
+    }
+
+    fetchArtist = async (teamId) => {
+        try {
+            const teamResponse = await axios.get(`/api/v1/teams/${teamId}`)
+            this.setState({
+                team: teamResponse.data,
+                games: teamResponse.data.games,
+                news: teamResponse.data.news,
             })
+        }
+        catch (error) {
+            console.log(error)
+            this.setState({ error: error.message })
+        }
     }
 
     render() {
         return (
             <div>
-                <h1>{this.state.name}</h1>
-                <p>{this.state.logo_url}</p>
-                <p>{this.state.coach}</p>
-                <img src={this.state.logo_url} width="350" alt='logo' />
+                <img src={this.state.team.logo_url} alt="" />
+                <h1>{this.state.team.name}</h1>
+                {this.state.games.map(game => (
+                    <div key={game.id}>
+                        <h4>{game.opponent}</h4>
+                    </div>
+                ))}
             </div>
-        )
+        );
     }
-
 }
+
+export default SingleTeam;

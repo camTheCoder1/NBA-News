@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'tunr_app'
+    'espn_app'
 ]
 
 MIDDLEWARE = [
@@ -84,9 +84,9 @@ WSGI_APPLICATION = 'tunr_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'espn_database',
-        'USER': 'tunr',
-        'PASSWORD': 'tunr',
+        'NAME': 'espn',
+        'USER': 'espn',
+        'PASSWORD': 'espn',
         'HOST': 'localhost'
     }
 }
