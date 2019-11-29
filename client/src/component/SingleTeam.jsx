@@ -4,41 +4,56 @@ import axios from 'axios';
 class SingleTeam extends Component {
 
     state = {
-        team: {},
+        name: '',
+        logo_url: '',
+        coach: '',
         games: [],
         news: []
     }
 
-    componentDidMount() {
-        const teamId = this.props.match.params.id;
-        this.fetchArtist(teamId)
-    }
-
-    fetchArtist = async (teamId) => {
-        try {
-            const teamResponse = await axios.get(`/api/v1/teams/${teamId}`)
-            this.setState({
-                team: teamResponse.data,
-                games: teamResponse.data.games,
-                news: teamResponse.data.news,
-            })
-        }
-        catch (error) {
-            console.log(error)
-            this.setState({ error: error.message })
-        }
+    componentDidMount = async () => {
+        const allTeams = await axios.get(`/api/v1/team/${this.props.match.params.teamId}`)
+        this.setState(allTeams.data)
+        console.log(allTeams.data)
+        // const teamId = this.props.match.params.teamId
+        // axios.get(`/api/v1/team/${teamId}`)
+        //     .then((res) => {
+        //         console.log(res.data)
+        //         this.setState(res.data)
+        //     })
     }
 
     render() {
         return (
             <div>
-                <img src={this.state.team.logo_url} alt="" />
-                <h1>{this.state.team.name}</h1>
-                {this.state.games.map(game => (
-                    <div key={game.id}>
-                        <h4>{game.opponent}</h4>
-                    </div>
-                ))}
+                <h1>{this.state.name}</h1>
+                <img src={this.state.logo_url} alt="logo" width="350" />
+                <h2>Games</h2>
+                {this.state.games.map((game) => {
+                    return (
+                        <div key={game.id}>
+                            <h3>{game.opponent}</h3>
+                            <h3>{game.date}</h3>
+                            <h3>{game.location}</h3>
+                        </div>
+                    )
+                })}
+
+                {this.state.news.map((article) => {
+                    return (
+                        <div key={article.id}>
+                            <h2>News</h2>
+                            <h3>{article.title}</h3>
+                            <h3>{article.article_url}</h3>
+                        </div>
+                    )
+                })}
+                {/* <h1>{this.state.name}</h1>
+                <img src={this.state.logo_url} alt="logo" width="350" />
+                <h3>Games</h3>
+                <p>{this.state.games}</p>
+                <h3>News</h3>
+                <p>{this.state.news}</p> */}
             </div>
         );
     }
