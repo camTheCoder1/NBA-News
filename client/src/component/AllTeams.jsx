@@ -8,11 +8,13 @@ export default class AllTeams extends Component {
     }
 
     componentDidMount() {
-        axios.get('/api/v1/team')
-            .then((res) => {
-                const allTeams = res.data;
-                this.setState({ allTeams: allTeams })
-            })
+        this.refreshPage()
+    }
+
+    refreshPage = async () => {
+        const getAllTeams = await axios.get('/api/v1/team')
+        this.setState({ allTeams: getAllTeams.data })
+        console.log(this.state.allTeams)
     }
 
     render() {
