@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 import axios from 'axios';
 
 class SingleTeam extends Component {
@@ -15,12 +16,6 @@ class SingleTeam extends Component {
         const allTeams = await axios.get(`/api/v1/team/${this.props.match.params.teamId}`)
         this.setState(allTeams.data)
         console.log(allTeams.data)
-        // const teamId = this.props.match.params.teamId
-        // axios.get(`/api/v1/team/${teamId}`)
-        //     .then((res) => {
-        //         console.log(res.data)
-        //         this.setState(res.data)
-        //     })
     }
 
     render() {
@@ -28,7 +23,8 @@ class SingleTeam extends Component {
             <div>
                 <h1>{this.state.name}</h1>
                 <img src={this.state.logo_url} alt="logo" width="350" />
-                <h2>Games</h2>
+                <div><Link to={`/games/`}>Games</Link>
+                </div>
                 {this.state.games.map((game) => {
                     return (
                         <div key={game.id}>
@@ -48,12 +44,6 @@ class SingleTeam extends Component {
                         </div>
                     )
                 })}
-                {/* <h1>{this.state.name}</h1>
-                <img src={this.state.logo_url} alt="logo" width="350" />
-                <h3>Games</h3>
-                <p>{this.state.games}</p>
-                <h3>News</h3>
-                <p>{this.state.news}</p> */}
             </div>
         );
     }

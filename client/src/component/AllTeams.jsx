@@ -16,7 +16,6 @@ export default class AllTeams extends Component {
         this.setState({ allTeams: getAllTeams.data })
         console.log(this.state.allTeams)
     }
-
     render() {
         return (
             <div>
