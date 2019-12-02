@@ -23,14 +23,12 @@ class SingleTeam extends Component {
             <div>
                 <h1>{this.state.name}</h1>
                 <img src={this.state.logo_url} alt="logo" width="350" />
-                <div><Link to={`/games/`}>Games</Link>
+                <div><Link to={'/games/'}>Upcoming Games</Link>
                 </div>
                 {this.state.games.map((game) => {
                     return (
                         <div key={game.id}>
-                            <h3>{game.opponent}</h3>
-                            <h3>{game.date}</h3>
-                            <h3>{game.location}</h3>
+                            <Link to={`/games/${game.id}`}>{game.opponent}</Link>
                         </div>
                     )
                 })}
