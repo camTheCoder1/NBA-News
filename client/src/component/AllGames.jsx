@@ -12,7 +12,7 @@ export default class AllTeams extends Component {
     }
 
     getAllGames = async () => {
-        const getAllGames = await axios.get('/api/v1/games')
+        const getAllGames = await axios.get('/api/v1/game')
         this.setState({ allGames: getAllGames.data })
         console.log(this.state.allGames)
     }
@@ -26,7 +26,6 @@ export default class AllTeams extends Component {
                         <Link to={`/games/${game.id}`}>
                             <h3>{game.opponent}</h3>
                             <h3>{game.date}</h3>
-                            <h3>{game.location}</h3>
                         </Link>
                     )
                 })}
