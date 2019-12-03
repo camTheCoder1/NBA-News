@@ -2,13 +2,30 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 
 class Navbar extends Component {
+
+    constructor() {
+        super()
+
+    }
+
+
     render() {
         return (
-            <Link to='/' className="header">
-                <h1>NBA Favorites</h1>
-            </Link>
+            <nav className="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+                <div className="navbar-brand">
+                    <Link className="navbar-item" to="/">
+                        NBA
+                  </Link>
+
+                </div>
+                <div className="navbar-start">
+                    <Link to="/games" className="navbar-item">Games</Link>
+                    <Link to="/news" className="navbar-item">News</Link>
+
+                </div>
+            </nav>
         )
     }
-}
 
+}
 export default Navbar;
