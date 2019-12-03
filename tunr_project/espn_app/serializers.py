@@ -12,7 +12,7 @@ class GameSerializer(serializers.ModelSerializer):
 class NewsSerializer(serializers.ModelSerializer):
     class Meta:
         model = News
-        fields = ('id, ''title', 'article_url')
+        fields = ('id', 'title', 'article_url')
 
 
 class TeamSerializer(serializers.ModelSerializer):
