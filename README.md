@@ -6,5 +6,7 @@ This app was created for NBA lovers. It allows you to add your favorite team and
 # Deployed App
 Trello Board: [Here](https://trello.com/b/pz7Xct7H/project4)
 
-# 
+# Wireframe
+![wireframe](screenshots/project4-wireframe1.jpg)
+![wireframe](screenshots/project4-wireframe2.jpg)
 
