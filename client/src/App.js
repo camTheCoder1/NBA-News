@@ -17,16 +17,16 @@ class App extends Component {
         <div className="topNav">
           <Navbar />
         </div>
-
-        <Switch>
-          <Route exact path="/" component={AllTeams} />
-          <Route exact path="/team/:teamId" component={SingleTeam} />
-          <Route exact path="/games" component={AllGames} />
-          <Route exact path="/games/:gameId" component={SingleGame} />
-          <Route exact path="/news" component={News} />
-          <Route exact path="/admin" component={Admin} />
-        </Switch>
-
+        <div>
+          <Switch>
+            <Route exact path="/" component={AllTeams} />
+            <Route exact path="/team/:teamId" component={SingleTeam} />
+            <Route exact path="/games" component={AllGames} />
+            <Route exact path="/games/:gameId" component={SingleGame} />
+            <Route exact path="/news" component={News} />
+            <Route exact path="/admin" component={Admin} />
+          </Switch>
+        </div>
       </Router>
     );
   }

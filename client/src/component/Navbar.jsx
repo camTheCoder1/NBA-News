@@ -5,10 +5,9 @@ class Navbar extends Component {
     render() {
         return (
             <Link to='/' className="header">
-                <h1>NBA</h1>
-
+                <h1>NBA Favorites</h1>
             </Link>
-        );
+        )
     }
 }
 
