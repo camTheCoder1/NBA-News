@@ -11,17 +11,17 @@ class Navbar extends Component {
 
     render() {
         return (
-            <nav className="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+            <nav className="navbar-is-fixed-top" role="navigation" aria-label="main navigation">
                 <div className="navbar-brand">
-                    <Link className="navbar-item" to="/">
-                        NBA
+                    <Link className="navbar-item" to="/"> NBA
                   </Link>
 
                 </div>
                 <div className="navbar-start">
                     <Link to="/games" className="navbar-item">Games</Link>
+                </div>
+                <div>
                     <Link to="/news" className="navbar-item">News</Link>
-
                 </div>
             </nav>
         )

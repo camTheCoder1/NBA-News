@@ -22,9 +22,20 @@
   color: #09d3ac;
 }
 
+.navbar-is-fixed-top{
+  display: flex;
+  justify-content: flex-end;
+}
+
 .navbar-item{
   font-family: 'san-serif', cursive;
+
 }
+
+.navbar-start{
+  margin: 0 5px;
+}
+
 
 body{
   background: linear-gradient(white, grey)fixed;
