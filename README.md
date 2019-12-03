@@ -12,3 +12,11 @@ Trello Board: [Here](https://trello.com/b/pz7Xct7H/project4)
 
 # ERD
 ![erd](screenshots/project4erd.png)
+
+# Version
+Version 1.0
+
+# Technologies Used
+1. Django
+2. Postgresql
+3. React
