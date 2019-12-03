@@ -41,9 +41,7 @@ class SingleTeam extends Component {
                     {this.state.news.map((article) => {
                         return (
                             <div key={article.id}>
-                                <Link to={`/news/${article.id}`}>{article.title}</Link>
-                                <h3>{article.title}</h3>
-                                <h3>{article.article_url}</h3>
+                                <a href={article.article_url}>{article.title}</a>
                             </div>
                         )
                     })}
