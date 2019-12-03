@@ -4,6 +4,8 @@ import AllTeams from './component/AllTeams';
 import SingleTeam from './component/SingleTeam';
 import AllGames from './component/AllGames';
 import SingleGame from './component/SingleGame';
+import News from './component/News';
+import Admin from './component/Admin';
 import './App.css';
 
 class App extends Component {
@@ -21,6 +23,8 @@ class App extends Component {
             <Route exact path="/team/:teamId" component={SingleTeam} />
             <Route exact path="/games" component={AllGames} />
             <Route exact path="/games/:gameId" component={SingleGame} />
+            <Route exact path="/news" component={News} />
+            <Route exact path="/admin" component={Admin} />
           </Switch>
         </div>
       </Router>
