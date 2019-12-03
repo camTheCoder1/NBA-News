@@ -51,9 +51,11 @@ export default class AllTeams extends Component {
             <div>
                 {this.state.allTeams.map((team) => {
                     return (
-                        <Link to={`/team/${team.id}`}>
+
+                        <Link to={`/team/${team.id}`} key={team.id}>
                             <img src={team.logo_url} width="200" alt='logo' />
                         </Link>)
+
                 }
                 )}
                 <div>
