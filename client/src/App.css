@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+
 }
 
 .App-logo {
@@ -23,4 +24,11 @@
 
 .navbar-item{
   font-family: 'san-serif', cursive;
+}
+
+body{
+  background: linear-gradient(white, grey)fixed;
+}
+img{
+  border-spacing: 10em;
 }
