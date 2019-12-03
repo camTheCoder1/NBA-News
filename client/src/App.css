@@ -32,3 +32,7 @@ body{
 img{
   border-spacing: 10em;
 }
+
+.flex-container {
+display: flex;
+}
